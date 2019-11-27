@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval';
+        style-src 'self' 'unsafe-inline';  script-src 'self' 'unsafe-inline';
+        media-src 'self' ;img-src 'self' data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <link rel="stylesheet" href="css/onsenui.css">
+    <link rel="stylesheet" type="text/css" href="css/onsen-css-components.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/Custom.css">
+    <title>SL</title>
+</head>
+
+<body>
+    <ons-navigator id="appNavigator" swipeable swipe-target-width="80px">
+        <ons-page>
+            <ons-splitter id="appSplitter">
+                <ons-splitter-side id="sidemenu" page="sidemenu.html" swipeable side="right" collapse="" width="260px">
+                </ons-splitter-side>
+                <ons-splitter-content page="home.html"></ons-splitter-content>
+            </ons-splitter>
+        </ons-page>
+    </ons-navigator>
+   
+    <!-- <script>
+    ons.getScriptPage().addEventListener('prechange', function (event) {
+      if (event.target.matches('#appTabbar')) {
+        event.currentTarget.querySelector('ons-toolbar .center').innerHTML = event.tabItem.getAttribute('label');
+      }
+    });
+  </script> -->
+    <template id="sidemenu.html">
+        <ons-page">
+            <ons-list-title>Access</ons-list-title>
+            <ons-list>
+                <ons-list-item>
+                    <div class="left">
+                        <ons-icon fixed-width class="list-item__icon" icon="ion-home, material:md-home"></ons-icon>
+                    </div>
+                    <div class="center">
+                        Home
+                    </div>
+                    <div class="right">
+                        <ons-icon icon="fa-link"></ons-icon>
+                    </div>
+                </ons-list-item>
+                <ons-list-item onclick="fn.pushPage({'id': 'GridOne.html', 'title': 'GridOne'})">
+                    <div class="left">
+                        <ons-icon fixed-width class="list-item__icon" icon="ion-edit, material:md-edit"></ons-icon>
+                    </div>
+                    <div class="center">
+                        Forms
+                    </div>
+                    <div class="right">
+                        <ons-icon icon="fa-link"></ons-icon>
+                    </div>
+                </ons-list-item>
+                <ons-list-item>
+                    <div class="left">
+                        <ons-icon fixed-width class="list-item__icon" icon="ion-film-marker, material: md-movie-alt">
+                        </ons-icon>
+                    </div>
+                    <div class="center">
+                        Animations
+                    </div>
+                    <div class="right">
+                        <ons-icon icon="fa-link"></ons-icon>
+                    </div>
+                </ons-list-item>
+                <ons-list-item>
+                    <div class="left">
+                        <label class="radio-button">
+                            <input type="radio" id="radio1ON" class="radio-button__input" name="r">
+                            <div class="radio-button__checkmark"></div>
+                        </label>
+                    </div>
+                    <div class="center">
+                        <label for="radio1ON">
+                            Radio Button ON
+                        </label>
+                    </div>
+                </ons-list-item>
+                <ons-list-item>
+                    <div class="left">
+                        <label class="radio-button labelbordertopbottom0">
+                            <input type="radio" id="radio2OFF" class="radio-button__input" name="r" checked="checked">
+                            <div class="radio-button__checkmark"></div>
+                        </label>
+                    </div>
+                    <div class="center"> <label for="radio2OFF">
+                            Radio Button OFF
+                        </label></div>
+                </ons-list-item>
+            </ons-list>
+            <script>
+                ons.getScriptPage().onInit = function () {
+                    // Set ons-splitter-side animation
+                    this.parentElement.setAttribute('animation', ons.platform.isAndroid() ? 'overlay' : 'reveal');
+                };
+            </script>
+            <style>
+                ons-list-item {
+                    color: #444;
+                }
+            </style>
+        </ons-page>
+    </template>
+    <template id="home.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="center">Home</div>
+                <div class="right">
+                    <ons-toolbar-button onclick="fn.toggleMenu()">
+                        <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+            </ons-toolbar>
+            <div class="container ">
+                <div class="row p-2">
+                    <div class="col">
+                        <div class="text-center" onclick="fn.pushPage({'id': 'GridOne.html', 'title': 'GridOne'})">
+                            <img class=" img-fluid" src="img/128x128.png">
+                        </div>
+                    </div>
+                    <div class="col ">
+                        <div class=" text-center" onclick="fn.pushPage({'id': 'GridOne.html', 'title': 'GridOne'})"><img
+                                class="img-fluid" src="img/128x128.png"> </div>
+                    </div>
+                    <div class="col ">
+                        <div class=" text-center" onclick="fn.pushPage({'id': 'GridOne.html', 'title': 'GridOne'})"><img
+                                class=" img-fluid" src="img/128x128.png"> </div>
+                    </div>
+                </div>
+                <div class="row p-2">
+                    <div class="col ">
+                        <div class="text-center " onclick="fn.load('GridOne.html')">
+                            <img class="img-fluid" src="img/128x128.png"> </div>
+                    </div>
+                    <div class="col ">
+                        <div class=" text-center"><img class="img-fluid" src="img/128x128.png"> </div>
+                    </div>
+                    <div class="col ">
+                        <div class=" text-center"><img class=" img-fluid" src="img/128x128.png"> </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <style>
+        .intro {
+          text-align: center;
+          padding: 0 20px;
+          margin-top: 40px;
+        }
+
+        ons-card {
+          cursor: pointer;
+          color: #333;
+        }
+
+        .card__title,
+        .card--material__title {
+          font-size: 20px;
+        }
+      </style> -->
+        </ons-page>
+    </template>
+    <style>
+        ons-splitter-side[animation=overlay] {
+            border-left: 1px solid #bbb;
+        }
+    </style>
+     <script>
+         $("#GridOne").css({
+             "page__background": "green"
+         });
+     </script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/onsenui.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

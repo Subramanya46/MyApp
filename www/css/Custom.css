@@ -1,0 +1,44 @@
+.CardCustom {
+    color: white;
+    padding: 0.8%;
+    margin: 6%;
+    margin-top: auto;
+    font-size: 1.2rem;
+}
+
+.headingTextNew {
+    font-size: 1.4rem;
+    color: white;
+}
+
+.customgradBackground {
+    background-image: linear-gradient(to right, red, yellow);
+}
+
+.margTop0 {
+    margin-top: 0px;
+}
+
+.marginBottom0 {
+    margin-bottom: 0px;
+}
+
+.textCentering {
+    text-align: center;
+};
+
+.labelbordertopbottom0{
+    padding-top: 0px;
+    padding-bottom:0px;
+};
+
+.tabbar__border {
+    border-style: none;
+};
+
+
+.tabbar--material__border {
+    border-style: none;
+};
+
+
